@@ -2,10 +2,18 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 
-# Load dataset
-df = pd.read_csv("./main_data.csv")
+# Menentukan path file CSV secara dinamis
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, "main_data.csv")
 
+# Load dataset dengan pengecekan file
+try:
+    df = pd.read_csv(data_path)
+except Exception as e:
+    st.error(f"Error loading data: {e}")
+    st.stop()
 # Pastikan format datetime benar
 df["date"] = pd.to_datetime(df[["year", "month", "day"]])
 
