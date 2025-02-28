@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv("main_data.csv")
+df = pd.read_csv("./main_data.csv")
 
 # Pastikan format datetime benar
 df["date"] = pd.to_datetime(df[["year", "month", "day"]])
