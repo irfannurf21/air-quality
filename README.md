@@ -17,3 +17,6 @@ pip install numpy pandas matplotlib seaborn jupyter streamlit
 streamlit run dashboard.py
 ```
 
+## Url streamlit
+https://air-quality-siq4kucm47i7u2uctocz4h.streamlit.app/
+
